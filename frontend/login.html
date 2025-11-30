@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--Font Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--Logo Title-->
+    <link rel="icon" href="Assets/img/Logo rumah impian.png" type="image/x-icon">
+
+    <title>Login - Rumah Impian Kami</title>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(160deg, #048853, #000);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 450px;
+        padding: 20px;
+      }
+
+      .login-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .logo-section img {
+        width: 80px;
+        margin-bottom: 15px;
+      }
+
+      .logo-section h2 {
+        color: #048853;
+        font-weight: 700;
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+
+      .logo-section p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .form-label {
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .form-control {
+        height: 50px;
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        padding: 12px 20px;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #048853;
+        box-shadow: 0 0 0 0.2rem rgba(4, 136, 83, 0.15);
+      }
+
+      .btn-login {
+        width: 100%;
+        height: 50px;
+        background: #048853;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-login:hover {
+        background: #036d44;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(4, 136, 83, 0.3);
+      }
+
+      .btn-login:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 25px 0;
+        position: relative;
+      }
+
+      .divider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: #e0e0e0;
+      }
+
+      .divider span {
+        background: white;
+        padding: 0 15px;
+        position: relative;
+        color: #999;
+        font-size: 14px;
+      }
+
+      .register-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .register-link a {
+        color: #048853;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .register-link a:hover {
+        text-decoration: underline;
+      }
+
+      .back-home {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .back-home a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .back-home a:hover {
+        text-decoration: underline;
+      }
+
+      .alert {
+        border-radius: 10px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        font-size: 18px;
+      }
+
+      .password-wrapper {
+        position: relative;
+      }
+
+      .spinner-border-sm {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <!-- Logo Section -->
+        <div class="logo-section">
+          <img src="Assets/img/Logo rumah impian.png" alt="Logo">
+          <h2>Selamat Datang</h2>
+          <p>Masuk ke akun Rumah Impian Kami</p>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertMessage" style="display: none;"></div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="password-wrapper">
+              <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+              <span class="password-toggle" onclick="togglePassword()">
+                <i id="toggleIcon">👁️</i>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">
+              Ingat saya
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-login" id="loginBtn">
+            Masuk
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>atau</span>
+        </div>
+
+        <!-- Register Link -->
+        <div class="register-link">
+          Belum punya akun? <a href="register.html">Daftar Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Back to Home -->
+      <div class="back-home">
+        <a href="index.html">← Kembali ke Beranda</a>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Login Script -->
+    <script>
+      const API_BASE_URL = 'http://localhost:3000/api';
+
+      // Toggle Password Visibility
+      function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          toggleIcon.textContent = '🙈';
+        } else {
+          passwordInput.type = 'password';
+          toggleIcon.textContent = '👁️';
+        }
+      }
+
+      // Show Alert Message
+      function showAlert(message, type = 'danger') {
+        const alertDiv = document.getElementById('alertMessage');
+        alertDiv.className = `alert alert-${type}`;
+        alertDiv.textContent = message;
+        alertDiv.style.display = 'block';
+
+        setTimeout(() => {
+          alertDiv.style.display = 'none';
+        }, 5000);
+      }
+
+      // Handle Login Form Submit
+      document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+        const loginBtn = document.getElementById('loginBtn');
+
+        // Disable button and show loading
+        loginBtn.disabled = true;
+        loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Memproses...';
+
+        try {
+          const response = await fetch(`${API_BASE_URL}/auth/login`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(data.message || 'Login gagal');
+          }
+
+          // Save token and user data
+          localStorage.setItem('authToken', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+
+          if (rememberMe) {
+            localStorage.setItem('rememberMe', 'true');
+          }
+
+          // Show success message
+          showAlert('Login berhasil! Mengalihkan...', 'success');
+
+          // Redirect to home page
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1500);
+
+        } catch (error) {
+          console.error('Login error:', error);
+          showAlert(error.message || 'Login gagal. Silakan coba lagi.');
+          
+          // Re-enable button
+          loginBtn.disabled = false;
+          loginBtn.innerHTML = 'Masuk';
+        }
+      });
+
+      // Check if already logged in
+      window.addEventListener('DOMContentLoaded', () => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+          // Verify token is still valid
+          fetch(`${API_BASE_URL}/health`, {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          }).then(response => {
+            if (response.ok) {
+              window.location.href = 'index.html';
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

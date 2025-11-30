@@ -1,0 +1,362 @@
+/* File: frontend/css/add-property.css */
+/* Simpan di: rumah-impian-kami/frontend/css/add-property.css */
+
+/* Body & Container */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(160deg, #048853, #000);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header-section img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.header-section h2 {
+  color: #048853;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header-section p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Form Elements */
+.form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.required {
+  color: red;
+}
+
+.form-control, 
+.form-select {
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  padding: 12px 20px;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+textarea.form-control {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-control:focus, 
+.form-select:focus {
+  border-color: #048853;
+  box-shadow: 0 0 0 0.2rem rgba(4, 136, 83, 0.15);
+  outline: none;
+}
+
+/* Image Upload Area */
+.image-upload-area {
+  border: 3px dashed #048853;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  background: #f8fffe;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.image-upload-area:hover {
+  background: #e8f5f1;
+  border-color: #036d44;
+  transform: translateY(-2px);
+}
+
+.image-upload-area.dragover {
+  background: #d4ede5;
+  border-color: #036d44;
+  box-shadow: 0 5px 15px rgba(4, 136, 83, 0.2);
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.image-upload-area h5 {
+  color: #048853;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.image-upload-area p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Image Preview */
+.image-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview.show {
+  display: block;
+}
+
+.file-info {
+  font-size: 12px;
+  color: #048853;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-submit {
+  width: 100%;
+  height: 55px;
+  background: #048853;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #036d44;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(4, 136, 83, 0.3);
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-back {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  transform: translateX(-5px);
+}
+
+/* Alert */
+.alert {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  font-weight: 500;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Input Group */
+.input-group-text {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-right: none;
+  font-weight: 500;
+  color: #048853;
+}
+
+.input-group .form-control {
+  border-left: none;
+}
+
+.input-group .form-control:focus {
+  border-left: none;
+}
+
+/* Price Format */
+#priceFormat {
+  display: block;
+  margin-top: 5px;
+  color: #048853;
+  font-weight: 500;
+}
+
+/* Spinner */
+.spinner-border-sm {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .form-container {
+    padding: 25px;
+  }
+
+  .header-section h2 {
+    font-size: 24px;
+  }
+
+  .header-section img {
+    width: 50px;
+  }
+
+  .image-upload-area {
+    padding: 30px 20px;
+  }
+
+  .upload-icon {
+    font-size: 36px;
+  }
+
+  .btn-submit {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .form-container {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .header-section h2 {
+    font-size: 22px;
+  }
+
+  .header-section p {
+    font-size: 14px;
+  }
+
+  .form-control,
+  .form-select {
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .btn-submit {
+    font-size: 15px;
+  }
+
+  .image-upload-area h5 {
+    font-size: 16px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Focus States */
+.form-control:focus,
+.form-select:focus {
+  border-color: #048853;
+  box-shadow: 0 0 0 0.2rem rgba(4, 136, 83, 0.15);
+}
+
+/* Invalid States */
+.form-control:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+.form-control:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+/* Loading State */
+.btn-submit.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-submit.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

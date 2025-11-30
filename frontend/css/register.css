@@ -1,0 +1,202 @@
+/* Register Page Styles */
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(160deg, #048853, #000);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .register-container {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .register-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .logo-section img {
+        width: 80px;
+        margin-bottom: 15px;
+      }
+
+      .logo-section h2 {
+        color: #048853;
+        font-weight: 700;
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+
+      .logo-section p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .form-label {
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      .form-control {
+        height: 50px;
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        padding: 12px 20px;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #048853;
+        box-shadow: 0 0 0 0.2rem rgba(4, 136, 83, 0.15);
+      }
+
+      .btn-register {
+        width: 100%;
+        height: 50px;
+        background: #048853;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-register:hover {
+        background: #036d44;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(4, 136, 83, 0.3);
+      }
+
+      .btn-register:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 25px 0;
+        position: relative;
+      }
+
+      .divider::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: #e0e0e0;
+      }
+
+      .divider span {
+        background: white;
+        padding: 0 15px;
+        position: relative;
+        color: #999;
+        font-size: 14px;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .login-link a {
+        color: #048853;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      .back-home {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .back-home a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .back-home a:hover {
+        text-decoration: underline;
+      }
+
+      .alert {
+        border-radius: 10px;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        font-size: 18px;
+      }
+
+      .password-wrapper {
+        position: relative;
+      }
+
+      .password-strength {
+        height: 5px;
+        border-radius: 3px;
+        margin-top: 5px;
+        background: #e0e0e0;
+        overflow: hidden;
+      }
+
+      .password-strength-bar {
+        height: 100%;
+        transition: all 0.3s;
+      }
+
+      .strength-weak { background: #dc3545; width: 33%; }
+      .strength-medium { background: #ffc107; width: 66%; }
+      .strength-strong { background: #28a745; width: 100%; }
+
+      .password-hint {
+        font-size: 12px;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .spinner-border-sm {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+      }
+
+      .form-text {
+        font-size: 12px;
+        color: #666;
+      }
