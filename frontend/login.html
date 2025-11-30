@@ -314,13 +314,15 @@
             throw new Error(data.message || 'Login gagal');
           }
 
-          // Save token and user data
+          // Save token and user data (PASTIKAN ROLE TERSIMPAN)
           localStorage.setItem('authToken', data.token);
           localStorage.setItem('user', JSON.stringify(data.user));
 
           if (rememberMe) {
             localStorage.setItem('rememberMe', 'true');
           }
+
+          console.log('✅ Login successful, user role:', data.user.role);
 
           // Show success message
           showAlert('Login berhasil! Mengalihkan...', 'success');
